@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'simple.dart';
+import 'about.dart';
 void main() {
   runApp(MyApp());
 }
@@ -51,6 +52,8 @@ class SecondScreen extends StatelessWidget {
       appBar: AppBar(title:Text("Dice App")),
       body: Center(
           child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+
             children: [
               FlatButton(
                 color: Colors.blue,
@@ -98,7 +101,7 @@ class SecondScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushReplacement(context,
                       MaterialPageRoute(builder:
-                          (context) => SecondScreen()));
+                          (context) => AboutPage()));
                 },
                 child: Text(
                   "About",

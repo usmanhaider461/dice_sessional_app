@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'simple.dart';
 void main() {
   runApp(MyApp());
 }
@@ -61,7 +62,7 @@ class SecondScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushReplacement(context,
                       MaterialPageRoute(builder:
-                      (context) => SecondScreen()));
+                      (context) => SimpleGame()));
                 },
                 child: Text(
                   "Simple",
@@ -79,7 +80,7 @@ class SecondScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushReplacement(context,
                       MaterialPageRoute(builder:
-                          (context) => SecondScreen()));
+                          (context) => SimpleGame()));
                 },
                 child: Text(
                   "Hard",

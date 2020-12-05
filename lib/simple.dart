@@ -32,22 +32,44 @@ class _DicePageState extends State<DicePage> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Row(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(
-            child: FlatButton(
-                onPressed: () {
-                  changeDice();
-                },
-                child: Image.asset('assets/dice$leftDiceNumber.png')),
+          Row(
+            children: [
+              Expanded(
+                child: FlatButton(
+                    onPressed: () {
+                      changeDice();
+                    },
+                    child: Image.asset('assets/dice$leftDiceNumber.png')),
+              ),
+              Expanded(
+                child: FlatButton(
+                    onPressed: () {
+                      changeDice();
+                    },
+                    child: Image.asset('assets/dice$rightDiceNumber.png')),
+              ),
+
+            ],
           ),
-          Expanded(
-            child: FlatButton(
-                onPressed: () {
-                  changeDice();
-                },
-                child: Image.asset('assets/dice$rightDiceNumber.png')),
-          ),
+          Padding(
+            padding: const EdgeInsets.only(top:20.0),
+            child: IconButton(
+              icon: Icon(
+                Icons.home,
+                color: Colors.white,
+              ),
+              // Execute when pressed
+              onPressed: () {
+                // use the navigator to goto a named route
+                Navigator.of(context).pushNamed('/');
+              },
+              // Setting the size of icon
+              iconSize: 80.0,
+            ),
+          )
         ],
       ),
     );

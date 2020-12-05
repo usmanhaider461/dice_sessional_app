@@ -6,7 +6,7 @@ class SimpleGame extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.indigoAccent,
       appBar: AppBar(
-        title: Center(child: Text('Dice g Dice')),
+        title: Center(child: Text('Hard Level')),
         backgroundColor: Colors.indigo,
       ),
       body: DicePage(),

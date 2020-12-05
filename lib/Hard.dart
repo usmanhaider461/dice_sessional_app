@@ -1,10 +1,10 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-class SimpleGame extends StatelessWidget {
+class HardGame extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.indigoAccent,
+      backgroundColor: Colors.redAccent,
       appBar: AppBar(
         title: Center(child: Text('Hard Level')),
         backgroundColor: Colors.indigo,

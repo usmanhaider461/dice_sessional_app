@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'simple.dart';
+import 'Hard.dart';
 import 'about.dart';
 void main() {
   runApp(MyApp());
@@ -50,6 +51,30 @@ class SecondScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title:Text("Dice App")),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              child: Center(
+                child: Text('Dice Game',
+                style: TextStyle(
+                  fontSize: 30.0,
+                  color: Colors.white,
+                ),),
+              ),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+            ),
+            ListTile(
+              title: Text('Home'),
+              onTap: () {
+                Navigator.of(context).pushNamed('/');
+              },
+            ),
+          ],
+        ),
+      ),
       body: Center(
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -83,7 +108,7 @@ class SecondScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushReplacement(context,
                       MaterialPageRoute(builder:
-                          (context) => SimpleGame()));
+                          (context) => HardGame()));
                 },
                 child: Text(
                   "Hard",

@@ -1,49 +1,48 @@
-// import 'package:flutter/material.dart';
-//
-// void main() {
-//   runApp(MaterialApp(
-//     title: 'Navigation Basics',
-//     home: FirstRoute(),
-//   ));
-// }
-//
-// class FirstRoute extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('First Route'),
-//       ),
-//       body: Center(
-//         child: ElevatedButton(
-//           child: Text('Open route'),
-//           onPressed: () {
-//             Navigator.push(
-//               context,
-//               MaterialPageRoute(builder: (context) => SecondRoute()),
-//             );
-//           }),
-//         ),
-//       ),
-//     );
-//   }
-// }
-//
-// class SecondRoute extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text("Second Route"),
-//       ),
-//       body: Center(
-//         child: ElevatedButton(
-//           onPressed: () {
-//             Navigator.pop(context);
-//           },
-//           child: Text('Go back!'),
-//         ),
-//       ),
-//     );
-//   }
-// }
+import 'dart:math';
+import 'package:flutter/material.dart';
+class SimpleGame extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.indigoAccent,
+      appBar: AppBar(
+        title: Center(child: Text('Dice g Dice')),
+        backgroundColor: Colors.indigo,
+      ),
+      body: DicePage(),
+    );
+  }
+}
+
+class DicePage extends StatefulWidget {
+  @override
+  _DicePageState createState() => _DicePageState();
+}
+
+class _DicePageState extends State<DicePage> {
+// This widget is the root of your application
+  int leftDiceNumber = 6;
+  int rightDiceNumber = 6;
+  void changeDice() {
+    setState(() {
+      leftDiceNumber = Random().nextInt(6) + 1;
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Row(
+        children: [
+          Expanded(
+            child: FlatButton(
+                onPressed: () {
+                  changeDice();
+                },
+                child: Image.asset('assets/dice$leftDiceNumber.png')),
+          ),
+
+        ],
+      ),
+    );
+  }
+}

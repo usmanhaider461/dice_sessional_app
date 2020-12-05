@@ -25,6 +25,7 @@ class AboutPage extends StatelessWidget {
             // add children to the column
             children: <Widget>[
               // Text
+              Image.asset('assets/profile.jpg'),
               Text(
                 "Hi! My name is Usman Haider. I am a Mobile App Developer",
                 // Setting the style for the Text
@@ -34,10 +35,14 @@ class AboutPage extends StatelessWidget {
               ),
               // Icon Button
               InkWell(
-                  child: Text("This is a text link"),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Text("Github Profile",
+                      style: new TextStyle(color: Colors.blue),),
+                  ),
                   onTap: () async {
-                    if (await canLaunch("<your URL here>")) {
-                      await launch("<your URL here>");
+                    if (await canLaunch("https://github.com/usmanhaider461")) {
+                      await launch("https://github.com/usmanhaider461");
                     }
                   }
               ),
